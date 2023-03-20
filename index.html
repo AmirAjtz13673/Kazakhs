@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kazakhs in Canada</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Kazakhs in Canada</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Helpful Information</a></li>
+          <li><a href="#">Quick Guide</a></li>
+          <li><a href="#">Directions</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div id="d1">
+          <h2>Kosh Keldiniz!</h2>
+          <p id="intro">
+            Salem! And welcome to our website, dedicated to helping kazakh
+            international students navigate life in Canada. We understand that
+            studying in a new country can be challenging, and we are here to
+            provide you with the resources and information you need to make the
+            most of your experience. Whether you are looking for tips on finding
+            housing, information on the Canadian education system, or ideas for
+            fun activities to do in your free time, we have got you covered. Our
+            goal is to make your transition to life in Canada as smooth and
+            enjoyable as possible, so you can focus on your studies and make the
+            most of your time here.
+          </p>
+        </div>
+        <div class="slideshow-container">
+          <div class="slideshow-frame">
+            <div class="slide active">
+              <img src="images/Almaty1.jpg" alt="Image 1" />
+            </div>
+            <div class="slide">
+              <img src="images/astana.jpg" alt="Image 2" />
+            </div>
+            <div class="slide">
+              <img src="images/atyrau.jpg" alt="Image 3" />
+            </div>
+            <div class="slide">
+              <img src="images/shymkent.jpg" alt="Image 3" />
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+    <script src="javascript/slideshow.js"></script>
+    <script>
+      document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowLeft") {
+          plusSlides(-1);
+        } else if (event.code === "ArrowRight") {
+          plusSlides(1);
+        }
+      });
+
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].classList.remove("active");
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].classList.remove("active");
+        }
+        slides[slideIndex - 1].classList.add("active");
+        dots[slideIndex - 1].classList.add("active");
+      }
+    </script>
+  </body>
+</html>
